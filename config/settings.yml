@@ -1,0 +1,8 @@
+plugins:
+  enable_hodots_logins:
+    default: false
+  hodots_client_id:
+    default: ''
+  hodots_secret:
+    default: ''
+    secret: true
