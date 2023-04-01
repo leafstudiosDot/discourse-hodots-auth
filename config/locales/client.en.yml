@@ -1,4 +1,8 @@
 en:
+  site_settings:
+    enable_hodots_logins: 'Enable hodots. Account Authentication'
+    hodots_client_id: 'Your hodots. App Client ID'
+    hodots_secret: 'Your hodots. App Secret'
   js:
     login:
       hodots:

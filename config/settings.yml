@@ -1,5 +1,6 @@
 plugins:
   enable_hodots_logins:
+    client: true
     default: false
   hodots_client_id:
     default: ''

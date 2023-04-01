@@ -6,7 +6,7 @@
 # authors: aliamanuba
 # url: https://github.com/leafstudiosDot/discourse-hodots-auth
 
-enabled_site_setting :hodots_authentication_enabled
+enabled_site_setting :enable_hodots_logins
 
 PLUGIN_NAME = "discourse-hodots-auth"
 
@@ -56,12 +56,12 @@ class Auth::HodotsAuthenticator < Auth::ManagedAuthenticator
   
     def register_middleware(omniauth)
       omniauth.provider HodotsStrategy,
-                        setup:
-                          lambda { |env|
-                            strategy = env["omniauth.strategy"]
-                            strategy.options[:client_id] = SiteSetting.hodots_client_id
-                            strategy.options[:client_secret] = SiteSetting.hodots_secret
-                          }
+        setup:
+          lambda { |env|
+            strategy = env["omniauth.strategy"]
+            strategy.options[:client_id] = SiteSetting.hodots_client_id
+            strategy.options[:client_secret] = SiteSetting.hodots_secret
+          }
     end
   
     def after_authenticate(auth_token, existing_account: nil)
