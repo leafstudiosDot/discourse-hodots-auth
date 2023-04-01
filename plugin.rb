@@ -10,6 +10,8 @@ enabled_site_setting :enable_hodots_logins
 
 PLUGIN_NAME = "discourse-hodots-auth"
 
+register_svg_icon "fab-hodots"
+
 class Auth::HodotsAuthenticator < Auth::ManagedAuthenticator
     class HodotsStrategy < OmniAuth::Strategies::OAuth2
       option :name, "hodots"
@@ -73,3 +75,5 @@ class Auth::HodotsAuthenticator < Auth::ManagedAuthenticator
       true
     end
   end
+
+  auth_provider authenticator: HodotsAuthenticator.new, icon: "fab-hodots"
