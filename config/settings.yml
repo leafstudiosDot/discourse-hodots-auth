@@ -1,4 +1,4 @@
-plugins:
+login:
   enable_hodots_logins:
     client: true
     default: false
